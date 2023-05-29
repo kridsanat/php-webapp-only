@@ -1,11 +1,11 @@
 version: '3.8'
 services:
   php-apache-environment:
-    container_name: php-webapp
+    container_name: PHP-Webapp
     build:
       context: ./php
       dockerfile: Dockerfile
     volumes:
       - ./php/scr:/var/www/html/
     ports:
-      - 8080:80
+      - 8890:80
