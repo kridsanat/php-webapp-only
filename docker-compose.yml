@@ -8,4 +8,4 @@ services:
     volumes:
       - ./php/scr:/var/www/html/
     ports:
-      - 8080:8
+      - 8080:80
