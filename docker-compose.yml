@@ -6,6 +6,8 @@ services:
     restart: unless-stopped
     volumes:
       - ./php/scr:/var/www/html/
+    ports:
+      - 8890:80
     expose:
       - "8890"
 
