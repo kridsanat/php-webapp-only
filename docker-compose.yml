@@ -9,3 +9,18 @@ services:
       - ./php/scr:/var/www/html/
     ports:
       - 8890:80
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy:alpine
+    container_name: nginx-proxy
+    restart: always
+    ports:
+      -"80:80"
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+
+networks:
+  default:
+    external:
+      name:
+        webproxy
