@@ -9,3 +9,19 @@ services:
       - ./php/scr:/var/www/html/
     ports:
       - 8890:80
+
+  nginx:
+    container_name: NNginx
+    image: nginx:stable-alpine
+    restart: unless-stopped
+    volumes:
+      - ./php/scr:/var/www/html/
+      - ./nginx/conf/nginx.config:/etc/nginx/conf/nginx.conf:ro
+      - ./nginx/conf.d:/ect/nginx/conf.d:ro
+    ports:
+      - 8891:80
+
+
+networks:
+  default:
+    name: web_network
