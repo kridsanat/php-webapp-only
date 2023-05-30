@@ -1,14 +1,13 @@
 version: '3.8'
 services:
-  php-apache-environment:
-    container_name: PHP-Webapp
-    build:
-      context: ./php
-      dockerfile: Dockerfile
+  php:
+    container_name: lemp_php
+    build: php/
+    restart: unless-stopped
     volumes:
       - ./php/scr:/var/www/html/
-    ports:
-      - 8890:80
+    expose:
+      - "8890"
 
   nginx:
     container_name: NNginx
@@ -24,4 +23,5 @@ services:
 
 networks:
   default:
-    name: web_network
+      name:
+        web_network
