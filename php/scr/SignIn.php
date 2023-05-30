@@ -10,7 +10,7 @@ $admin_pass = md5($_POST["passadmin"]);
 if ($num_rows == 1) {
     session_start();
     $_SESSION['useradmin'] = $rowLogin['useradmin'];
-    echo "<meta http-equiv='refresh' content='0;URL=main.php'>";
+    echo "<meta http-equiv='refresh' content='0;URL=nu_sys/nu_ssds.php'>";
 } else {
     echo "<meta http-equiv='Content-Type' content='text/html; charset=tis-620' />";
     echo "<script language='javascript'>alert('Username or password is not correct');</script>";
