@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   php:
-    container_name: lemp_php
+    container_name: PHP-Webapp-only
     build: php/
     restart: unless-stopped
     volumes:
