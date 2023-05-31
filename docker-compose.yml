@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  php:
+  php-apache-environment:
     container_name: PHP-Webapp-only
     build:
       context: ./php
