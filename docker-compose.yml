@@ -24,22 +24,7 @@ services:
     ports:
       - 8891:80
 
-  nginx-proxy:
-    image: jwilder/nginx-proxy:alpine
-    container_name: nginx-proxy
-    restart: always
-    ports:
-      - "8892:80"
-    volumes:
-      - ./nginx/conf/nginx.config:/etc/temp
-
 networks:
   default:
       name:
         web_network
-
-  webproxy:
-      name: webproxy
-
-
-
