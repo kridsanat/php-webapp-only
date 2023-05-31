@@ -2,16 +2,12 @@ version: '3.8'
 services:
   php:
     container_name: PHP-Webapp-only
-    build:
-      context: ./php
-      dockerfile: Dockerfile
+    build: php/
     restart: unless-stopped
     volumes:
       - ./php/scr:/var/www/html/
     ports:
       - 8890:80
-    expose:
-      - "8890"
 
   nginx:
     container_name: NNginx
