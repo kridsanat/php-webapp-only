@@ -35,6 +35,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
     ports:
       - '5432:5432'
     volumes: 
@@ -42,4 +43,18 @@ services:
 volumes:
   db:
     driver: local
-    
+  
+  portainer:
+    container_name: db-portainer
+    restart: unless-stopped
+    image: portainer/portainer
+    volumes:
+      - portainer_data:/data
+      - ./php/scr:/var/run/docker.sock
+
+    ports:
+      - "8899:9000"
+networks:
+    default:
+       external:
+         name: webproxy    
