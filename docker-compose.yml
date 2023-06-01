@@ -10,8 +10,20 @@ services:
       - ./php/scr:/var/www/html/
     ports:
       - 8890:80
+  portainer:
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    image: portainer/portainer
+    volumes:
+      - portainer_data:/data
+      - ./php/scr:/var/run/docker.sock
+
+    ports:
+      - "8899:9000"
+volumes: 
+  portainer_data:
+
 networks:
     default:
        external:
-         name: web_network
-
+         name: webproxy
