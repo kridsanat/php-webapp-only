@@ -25,5 +25,5 @@ volumes:
 
 networks:
     default:
-       external:
-         name: webproxy
+      external: true
+      name: webproxy
