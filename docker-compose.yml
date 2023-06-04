@@ -10,14 +10,7 @@ services:
       - ./php/scr:/var/www/html/
     ports:
       - 8890:80
-  portainer:
-    image: portainer/portainer-ce:latest
-    ports:
-      - 9443:9443
-    volumes:
-      - data:/data
-      - /var/run/docker.sock:/var/run/docker.sock
-    restart: unless-stopped
+
 
 networks:
     default:
