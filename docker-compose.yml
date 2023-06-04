@@ -12,14 +12,12 @@ services:
       - 8890:80
   portainer:
     image: portainer/portainer-ce:latest
-    volumes:
-        - data:/data
-        - /var/run/docker.sock:/var/run/docker.sock
-    restart: unless-stopped
     ports:
-      - "8899:9000"
-volumes: 
-  portainer_data:
+      - 9443:9443
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
 
 networks:
     default:
