@@ -11,13 +11,11 @@ services:
     ports:
       - 8890:80
   portainer:
-    container_name: ${CONTAINER_NAME}
-    restart: unless-stopped
-    image: portainer/portainer
+    image: portainer/portainer-ce:latest
     volumes:
-      - portainer_data:/data
-      - ./php/scr:/var/run/docker.sock
-
+        - data:/data
+        - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
     ports:
       - "8899:9000"
 volumes: 
