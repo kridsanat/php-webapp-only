@@ -1,6 +1,6 @@
 <?php
 // Connect
-$host="192.168.1.104:9606";
+$host="192.168.20.134:9606";
 $username = "MYSQL_USER";
 $password = "MYSQL_PASSWORD";
 $datab = "u576316930_nupj";
